@@ -18,7 +18,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run() {
     try {
         await client.connect();
-        const database = client.db('pearls');
+        const database = client.db('jobs_window');
         const productsCollection = database.collection('products');
         const reviewsCollection = database.collection('reviews');
         const orderCollection = database.collection('order');
@@ -190,10 +190,10 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-    res.send('Running pearls Server');
+    res.send('Running jobswindow Server');
 });
 app.get('/updateex', (req, res) => {
-    res.send('Running pearls Server update hoiche');
+    res.send('jobs window Server update hoiche');
 });
 
 app.get('/hello', (req, res) => {
@@ -201,5 +201,5 @@ app.get('/hello', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('wow pearls Server on port', port);
+    console.log('wow jobswindow Server on port', port);
 })
